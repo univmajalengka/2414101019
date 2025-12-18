@@ -1,23 +1,23 @@
 <?php
-
-// Prosedur untuk menghitung diskon
 function hitungDiskon($totalBelanja) {
     $diskon = 0;
 
     if ($totalBelanja >= 100000) {
-        $diskon = 0.10 * $totalBelanja; // Diskon 10%
+        $diskon = 0.10 * $totalBelanja;
     } elseif ($totalBelanja >= 50000) {
-        $diskon = 0.05 * $totalBelanja; // Diskon 5%
+        $diskon = 0.05 * $totalBelanja;
+    } else {
+        $diskon = 0;
     }
 
-    return $diskon; // Mengembalikan nilai diskon
+    return $diskon;
 }
 
-// Contoh pemanggilan prosedur
 $totalBelanja = 120000;
 $diskon = hitungDiskon($totalBelanja);
+$totalBayar = $totalBelanja - $diskon;
 
-echo "Total Belanja: Rp. " . $totalBelanja . "<br>";
-echo "Diskon: Rp. " . $diskon . "<br>";
-echo "Total yang harus dibayar: Rp. " . ($totalBelanja - $diskon);
+echo "Total Belanja : Rp. $totalBelanja<br>";
+echo "Diskon        : Rp. $diskon<br>";
+echo "Total Bayar   : Rp. $totalBayar";
 ?>
